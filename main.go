@@ -23,6 +23,7 @@ func onReady() {
 
 	go func() {
 		<-mQuit.ClickedCh
+		close(finishCh)
 		systray.Quit()
 	}()
 
